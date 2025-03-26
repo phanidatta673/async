@@ -1,0 +1,33 @@
+# Virtual environment
+/venv/
+
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Data files
+/data/
+/results/
+
+# Model files (Optional, if large models are stored here and you want to ignore them)
+/models/*
+
+# Sensitive files (if any)
+*.env
