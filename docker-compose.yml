@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  inference:
+    platform: linux/arm64
+    build: .
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data:/app/data
+      - ./api:/app/api
+      - ./scripts:/app/scripts
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+    environment:
+      - MALLOC_TRIM_THRESHOLD_=100000
+      - PYTHONMALLOC=malloc
+    restart: unless-stopped 
